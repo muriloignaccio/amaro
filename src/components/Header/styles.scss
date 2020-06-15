@@ -1,0 +1,40 @@
+@mixin transition {
+  transition: all .3s ease-in-out;
+  opacity: 0.5;
+  outline: none;
+}
+
+.Header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__Item {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+
+    &--logo {
+      margin-top: 30px;
+      order: 1;
+      width: 100%;
+    }
+
+    &:hover,
+    &:active {
+      @include transition();
+    }
+  }
+
+  &__Icon--menu {
+    box-sizing: content-box;
+    padding-right: 15px;
+  }
+
+  &__Icon--bag {
+    box-sizing: content-box;
+    padding-left: 15px;
+  }
+
+}
