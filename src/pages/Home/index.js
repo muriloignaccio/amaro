@@ -1,0 +1,25 @@
+import React from 'react';
+
+import './styles.scss';
+
+import SkirtGirl from '../../assets/girl_skirt.png';
+
+export default () => {
+  return (
+    <div className='Home'>
+      <div className='Home__Banners'>
+        <img
+          src={SkirtGirl}
+          alt='Uma menina de saia rosa'
+          className='Home__Banner-Item'
+        />
+      </div>
+      <div className='Home__Actions'>
+        <h1 className='Home__Title'>
+          Peças atemporais e que combinam com tudo.
+        </h1>
+        <button className='Home__Button'>Shop now</button>
+      </div>
+    </div>
+  );
+};

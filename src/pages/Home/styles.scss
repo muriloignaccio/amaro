@@ -1,0 +1,37 @@
+.Home {
+
+  &__Banner-Item {
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  &__Actions {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  &__Title {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &__Button {
+    border: solid 2px #000;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 14px 32px;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: #000;
+      color: #FFF;
+      transition: all .4s;
+    }
+  }
+}
