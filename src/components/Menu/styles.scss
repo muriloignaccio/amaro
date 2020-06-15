@@ -1,0 +1,19 @@
+.Menu {
+  background-color: #222;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  padding: 24px;
+  top: 0;
+  width: 90%;
+
+  &__Header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__Icon {
+    color: #FFF;
+  }
+}
