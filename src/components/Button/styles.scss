@@ -1,0 +1,17 @@
+.Button {
+  background-color: #FFF;
+  border: solid 2px #000;
+  color: #000;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 14px 32px;
+  transition: all .4s;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: #000;
+    color: #FFF;
+  }
+}
