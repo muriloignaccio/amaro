@@ -2,6 +2,8 @@ import React from 'react';
 
 import './styles.scss';
 
+import { Button } from '../../components';
+
 import SkirtGirl from '../../assets/girl_skirt.png';
 
 export default () => {
@@ -18,7 +20,8 @@ export default () => {
         <h1 className='Home__Title'>
           Peças atemporais e que combinam com tudo.
         </h1>
-        <button className='Home__Button'>Shop now</button>
+        <Button>Shop now</Button>
+        {/* <button className='Home__Button'>Shop now</button> */}
       </div>
     </div>
   );
