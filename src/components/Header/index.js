@@ -1,33 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
-import Menu from '../../components/Menu';
+import { Bag, Menu } from '../../components';
 
+import { toggleMenu } from '../../actions/menu';
+import { toggleBag } from '../../actions/bag';
 import Logo from '../../assets/Logo.svg';
 
 import './styles.scss';
 
 export default () => {
-  const [isMenuOn, ToggleMenu] = useState(false);
+  const dispatch = useDispatch();
+  const handleMenuToggle = () => dispatch(toggleMenu());
+  const handleBagToggle = () => dispatch(toggleBag());
   return (
     <>
       <header className='Header'>
-        <button className='Header__Item'>
+        <button className='Header__Item' onClick={handleMenuToggle}>
           <FontAwesomeIcon
             icon={faBars}
             size='lg'
             className='Header__Icon--menu'
-            onClick={() => ToggleMenu(!isMenuOn)}
           />
           MENU
         </button>
 
         <div className='Header__Item Header__Item--logo'>
-          <img src={Logo} alt='Logo da Amaro' />
+          <img src={Logo} alt='Logo da Amaro' className='Header__Logo' />
         </div>
 
-        <button className='Header__Item'>
+        <button className='Header__Item' onClick={handleBagToggle}>
           SACOLA
           <FontAwesomeIcon
             icon={faShoppingBag}
@@ -37,7 +41,8 @@ export default () => {
         </button>
       </header>
 
-      {isMenuOn && <Menu />}
+      <Menu />
+      <Bag />
     </>
   );
 };
