@@ -9,6 +9,11 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
+  &__Logo {
+    display: block;
+    margin: 0 auto;
+  }
+
   &__Item {
     font-size: 16px;
     font-weight: bold;
