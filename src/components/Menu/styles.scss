@@ -1,11 +1,50 @@
+@mixin animation {
+
+  &::after {
+    content: '';
+    background-color: #fff;
+    height: 2px;
+    left: 0;
+    bottom: -1px;
+    position: absolute;
+  }
+
+  &:hover:after {
+    animation: bar .5s forwards;
+  }
+
+  @keyframes bar {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 20%;
+    }
+  }
+}
+
 .Menu {
   background-color: #222;
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
   left: 0;
   padding: 24px;
+  position: fixed;
   top: 0;
+  transition: all 0.4s ease-in-out;
   width: 90%;
+  z-index: 100;
+
+  &--hidden {
+    transform: translateX(-100%);
+  }
+
+  &--active {
+    transform: translateX(0);
+  }
 
   &__Header {
     align-items: center;
@@ -14,6 +53,90 @@
   }
 
   &__Icon {
-    color: #FFF;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+
+    &:active,
+    &:hover {
+      opacity: 0.4;
+      transition: all 0.4s;
+    }
+  }
+
+  &__Categories {
+    color: #bbb;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &__Category- {
+    &List {
+      margin-top: 20px;
+    }
+
+    &Link {
+      color: inherit;
+
+      &:hover {
+        color: #fff;
+        transition: color .3s;
+      }
+    }
+
+    &Title {
+      cursor: pointer;
+      font-size: 20px;
+      position: relative;
+      @include animation();
+
+      &--active {
+        color: #FFF;
+
+        &::after {
+          width: 20%;
+        }
+      }
+    }
+
+    &Item {
+      cursor: pointer;
+      font-weight: 500;
+      margin-left: 15px;
+      margin-top: 8px;
+
+      &--active {
+
+        color: #fff;
+        font-weight: 600;
+        transition: color .3s;
+      }
+
+      &:hover {
+        color: #fff;
+        font-weight: 600;
+        transition: color .3s;
+      }
+    }
+  }
+
+  &__Socials {
+    color: #bbb;
+    justify-items: flex-start;
+    display: flex;
+    margin-top: 30px;
+    font-size: 30px;
+  }
+
+  &__Social {
+    margin-right: 20px;
+    cursor: pointer;
+    transition: color .4s;
+
+    &:hover {
+      color: #FFF;
+    }
   }
 }
+
+.active {}
