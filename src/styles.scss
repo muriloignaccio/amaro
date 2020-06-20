@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
+$gray: #555;
+
 * {
   box-sizing: border-box;
 }
@@ -18,5 +20,34 @@ body {
 }
 
 .App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
   padding: 24px;
+}
+
+*::-webkit-scrollbar-track {
+
+  border-radius: 15px;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar {
+  background-color: white;
+  height: 8px;
+  width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba($gray, 0.6);
+
+  &:hover {
+    background-color: rgba($gray, 0.75);
+  }
+
+  &:active {
+    background-color: rgba($gray, 0.9);
+  }
 }
