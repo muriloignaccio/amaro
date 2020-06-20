@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleBag } from '../../actions/bag';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-import Button from '../Button';
-import { Background, Product } from '../';
+import { Background, Button } from '../';
+
+import EmptyCart from '../../assets/empty_cart.gif';
 
 import './styles.scss';
 
@@ -25,16 +26,24 @@ export default () => {
           </button>
         </div>
 
-        <div className='Bag__Products'>
+        <div className='Bag__Products Bag__Products--empty'>
+          {/* <Product />
           <Product />
-          <Product />
-          <Product />
+          <Product /> */}
+          <img
+            src={EmptyCart}
+            alt='Imagem do carrinho vazio'
+            className='Bag__Empty-Cart'
+          />
+          <p className='Bag__Empty-Text'>Sua sacola está vazia </p>
         </div>
 
         <div className='Bag__Footer'>
-          <h2 className='Bag__Price-Title'>Total</h2>
+          {/* <h2 className='Bag__Price-Title'>Total</h2>
           <p className='Bag__Subtotal'>R$ 199,90</p>
-          <Button>Finalizar compra</Button>
+          <Button>Finalizar compra</Button> */}
+
+          <Button>Comprar mais</Button>
         </div>
       </div>
       <Background active={active} handleClose={handleClose} />
