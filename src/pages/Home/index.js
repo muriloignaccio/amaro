@@ -4,7 +4,7 @@ import './styles.scss';
 
 import { Button } from '../../components';
 
-import SkirtGirl from '../../assets/girl_skirt.png';
+import SkirtGirl from '../../assets/girl_skirt.svg';
 
 export default () => {
   return (
@@ -21,7 +21,6 @@ export default () => {
           Peças atemporais e que combinam com tudo.
         </h1>
         <Button>Shop now</Button>
-        {/* <button className='Home__Button'>Shop now</button> */}
       </div>
     </div>
   );
