@@ -2,10 +2,10 @@ import React from 'react';
 
 import './styles.scss';
 
-export default ({ variant = 'light' }) => {
+export default ({ variant = 'light', splash = false }) => {
   return (
     <div
-      className='loading'
+      className={`loading ${splash ? 'loading--splash' : ''}`}
       style={{ background: `${variant === 'light' ? '#FFF' : '#000'}` }}
     >
       <div className='loading__container'>

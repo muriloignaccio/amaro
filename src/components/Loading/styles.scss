@@ -1,27 +1,32 @@
 .loading {
-  background-color: #000;
-  height: 100vh;
-  width: 100vw;
-}
-
-.loading__container {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -ms-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 200px;
-}
-
-.loading__container>svg {
   height: 100%;
-  width: 100%;
+  position: relative;
+
+  &--splash {
+    height: 100vh;
+    width: 100vw;
+    position: static;
+  }
+
+  &__container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 200px;
+
+    >svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
 
 .icon {
   -webkit-animation: dash 2s ease-in-out infinite;
-  animation: dash 2s ease-in-out infinite;
+  animation: dash 1.5s ease-in-out infinite;
   fill: transparent;
   stroke: #FFF;
   stroke-width: 1px;
