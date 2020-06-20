@@ -1,12 +1,13 @@
 .Bag {
-  background-color: #FFF;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: fixed;
   height: 100%;
-  right: 0;
+  max-width: 350px;
   padding: 24px;
+  right: 0;
   top: 0;
   transition: all 0.4s ease-in-out;
   width: 90%;
@@ -44,6 +45,14 @@
 
   &__Products {
     margin: 20px 0 auto;
+
+    &--empty {
+      margin: 0;
+    }
+  }
+
+  &__Empty-Cart {
+    width: 100%;
   }
 
   &__Price-Title {
@@ -59,4 +68,17 @@
     font-size: 30px;
   }
 
+  &__Empty-Text {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px;
+    text-transform: uppercase;
+  }
+
+  &__Footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
